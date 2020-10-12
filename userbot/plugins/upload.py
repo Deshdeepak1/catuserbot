@@ -35,6 +35,7 @@ async def uploadir(event):
         await udir_event.edit(f"Gathering file details in directory `{input_str}`")
         uploaded = 0
         async def upload(path):
+            global uploaded
             if os.path.isdir(path) :
                 p=path.replace(replacer,'')
                 await borg.send_message(
