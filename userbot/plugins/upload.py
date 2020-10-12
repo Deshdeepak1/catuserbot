@@ -33,6 +33,7 @@ async def uploadir(event):
     udir_event = await edit_or_reply(event, "Uploading....")
     if os.path.exists(input_str):
         await udir_event.edit(f"Gathering file details in directory `{input_str}`")
+        global uploaded
         uploaded = 0
         async def upload(path):
             global uploaded
